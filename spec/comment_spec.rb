@@ -9,5 +9,4 @@ RSpec.describe Comment, type: :model do
   it 'initial count to be nil' do
     expect(@post.comments_counter).to eq(nil)
   end
-
 end
