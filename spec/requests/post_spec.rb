@@ -1,39 +1,36 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-    describe 'Get /index' do
-        let(:user) do
-            User.create(
-              name: 'Tonny',
-              photo: 'https://unsplash.com/photos/man-person-standing-between-tall-trees-F_-0BxGuVvo',
-              posts_counter: 0,
-              bio: 'programmer'
-            )
-          end
-
+  describe 'Get /index' do
+    let(:user) do
+      User.create(
+          name: 'Tonny',
+          photo: 'https://unsplash.com/photos/man-person-standing-between-tall-trees-F_-0BxGuVvo',
+          posts_counter: 0,
+          bio: 'programmer'
+          )
+    end
         it 'should return a status 200' do
-            get "/users/#{user.id}/posts"
-            expect(response).to have_http_status(200)
+          get "/users/#{user.id}/posts"
+          expect(response).to have_http_status(200)
         end
-
         it 'display the index file' do
-            get "/users/#{user.id}/posts"
-            expect(response).to render_template('index')
+          get "/users/#{user.id}/posts"
+          expect(response).to render_template('index')
         end
         it 'display index file content' do
-            get "/users/#{user.id}/posts"
-            expect(response.body).to include('posts of the user')
+          get "/users/#{user.id}/posts"
+          expect(response.body).to include('posts of the user')
         end
-
         it 'returns http success' do
-            get "/users/#{user.id}/posts"
-            expect(response).to have_http_status(:success)
+          get "/users/#{user.id}/posts"
+          expect(response).to have_http_status(:success)
         end
 
         it 'display the show template' do
-            post = user.posts.create(title: 'Test Post', text: 'Test Content')
-            get "/users/#{user.id}/posts/#{post.id}"
-            expect(response).to render_template('posts/index')
+          post = user.posts.create(title: 'Test Post', text: 'Test Content')
+          get "/users/#{user.id}/posts/#{post.id}"
+          expect(response).to render_template('posts/index')
         end
     end
 
