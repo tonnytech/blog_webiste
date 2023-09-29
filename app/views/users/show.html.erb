@@ -1,1 +1,32 @@
-<h1>Show users </h1>
+<section class="section">
+    <div class="user_section_article image_and_user_container">
+        <div class="image_container">
+            <img src="<%= @user.photo %>" alt="">
+        </div>
+        <div class="user_section_information">
+            <h2><%= @user.name %></h2>
+            <p><%= link_to "Number of posts:", user_posts_url(@user.id) %> <%= @user.posts_counter %></p>
+        </div>
+    </div>
+
+    <div class="user-bio">
+        <h2>Bio</h2>
+        <p><%= @user.bio %></p>
+    </div>
+
+    <% if @user.recent_posts.any? %>
+        <% @user.recent_posts.each do |post| %>
+            <div class="post-details">
+                <h2><%= link_to "Post - ", user_post_url(@user.id, post.id) %><%= post.id %></h2>
+                <h3><%= post.text %></h3>
+                <div>
+                    <span>Comments:<%= post.comments_counter || 0 %> </span> 
+                    <span>Likes:<%= post.likes_counter || 0 %></span>
+                </div>    
+            </div>
+        <% end %>
+        <button type="button" class="see-posts">See all posts</button>
+        <% else %>
+            <p>No posts found.</p>
+        <% end %>
+</section>
