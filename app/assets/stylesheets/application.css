@@ -6,41 +6,40 @@ html {
 }
 
 .section {
-    padding-top: 5rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
-    border: 2px solid black;
+  padding-top: 5rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  border: 2px solid black;
 }
 
-.image_container{
-    width: 5rem;
-    height: 5rem;
-    border: 2px solid black;
-    width: 20%;
+.image_container {
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid black;
 }
 
 .user_section {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .user_section_article {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    width: 100%;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
 }
 
 .user_section_information {
-    border: 2px solid black;
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-    padding: 2rem;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  padding: 2rem;
 }
 
 .eachUser_image_and_introduction {
-    display: flex;
+  display: flex;
 }
