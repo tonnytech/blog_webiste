@@ -12,7 +12,6 @@ class PostsController < ApplicationController
     end
   end
 
-  
   def create
     @post = current_user.posts.new(post_params)
 
@@ -32,5 +31,4 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user_post = @user.posts.find(params[:id])
   end
-
 end
