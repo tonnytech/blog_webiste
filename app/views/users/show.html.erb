@@ -5,28 +5,38 @@
         </div>
         <div class="user_section_information">
             <h2><%= @user.name %></h2>
-            <p><%= link_to "Number of posts:", user_posts_url(@user.id) %> <%= @user.posts_counter %></p>
+            <p class='Post_absolute'><%= link_to "Number of posts:", user_posts_url(@user.id) %> <%= @user.posts_counter || 0 %></p>
         </div>
     </div>
 
-    <div class="user-bio">
-        <h2>Bio</h2>
-        <p><%= @user.bio %></p>
+    <div class="Post_container">
+       <div class='Post'>
+            <h2>Bio</h2>
+            <p><%= @user.bio %></p>
+       </div>
     </div>
 
     <% if @user.recent_posts.any? %>
         <% @user.recent_posts.each do |post| %>
-            <div class="post-details">
-                <h2><%= link_to "Post - ", user_post_url(@user.id, post.id) %><%= post.id %></h2>
+            <div class="Post_container">
+                <div class='Post'>
+                    <h2><%= link_to "Post # ", user_post_url(@user.id, post.id) %><%= post.id %></h2>
                 <h3><%= post.text %></h3>
-                <div>
+                <div class='Post_absolute''>
                     <span>Comments:<%= post.comments_counter || 0 %> </span> 
                     <span>Likes:<%= post.likes_counter || 0 %></span>
-                </div>    
+                </div> 
+                </div>   
             </div>
         <% end %>
-        <button type="button" class="see-posts">See all posts</button>
+        <div class='Post_container'>
+            <button type="button" class="">See all posts</button>
+        </div>
         <% else %>
-            <p>No posts found.</p>
+            <div class='Post_container'>
+                <div class='Post'>
+                    <p>No posts found.</p>
+                </div>
+            </div>
         <% end %>
 </section>

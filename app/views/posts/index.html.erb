@@ -1,33 +1,39 @@
 <section class="section">
-    <article class="">
-        <img src="<%= @user.photo %>" class="" alt="">
-        <div class="">
+    <article class="user_section_article image_and_user_container">
+        <div class='image_container'>
+            <img src="<%= @user.photo %>" class="" alt="">
+        </div>
+        <div class="user_section_information">
             <h2><%= @user.name %></h2>
-            <p>Number of posts: <%= @user.posts_counter %></p>
+            <p class='Post_absolute'>Number of posts: <%= @user.posts_counter %></p>
         </div>
     </article>
     <% @posts.each do |post| %>
-        <a class="" href="<%= user_post_path(user_id: post.author_id, id: post.id) %>">
-           <div>
-                <span class=""><%= post.title %></span>
-                <span class=""><%= post.text %></span>
-                <span class="">Comments : <%= post.comments_counter %>, Likes : <%= post.likes_counter %></span>
-           </div>
-            <% if post.recent_comments.present? %>
-                <div class="">
-                        <% post.recent_comments.each do |comment| %>
-                            <div class="">
-                                <div class=''> 
-                                    <%= @user.name%> : <span><%= comment.text %></span>
+        <div class='Post_container'>
+          <div class='Post'>
+              <a class="" href="<%= user_post_path(user_id: post.author_id, id: post.id) %>">
+            <div>
+                    <span class=""><%= post.title %></span>
+                    <span class=""><%= post.text %></span>
+                    <span class="Post_absolute">Comments : <%= post.comments_counter || 0 %>, Likes : <%= post.likes_counter || 0 %></span>
+            </div>
+                <% if post.recent_comments.present? %>
+                    <div class="">
+                            <% post.recent_comments.each do |comment| %>
+                                <div class="">
+                                    <div class=''> 
+                                        <%= @user.name%> : <span><%= comment.text %></span>
+                                    </div>
                                 </div>
-                            </div>
-                        <% end %>
-                </div>
-            <% else %>
-                <div class="">
-                    <div>No comment</div>
-                </div>
-            <% end %>
-        </a>
+                            <% end %>
+                    </div>
+                <% else %>
+                    <div class="">
+                        <div>No comment</div>
+                    </div>
+                <% end %>
+            </a>
+          </div>
+        </div>
     <% end %>
 </section>

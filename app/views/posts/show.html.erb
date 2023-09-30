@@ -1,19 +1,22 @@
-<section class="">
-    <div class="">
-        <h1><%= @post.title %></h1>
+<section class="section">
+    <div class="Post_container">
+        <div class='Post'>
+            <h1><%= @post.title %></h1>
         <span >by <%= @user.name %></span>
-        <span >Comments : <%= @post.comments_counter || 0 %>, Likes : <%= @post.likes_counter || 0 %></span>
+        <span class='Post_absolute' >Comments : <%= @post.comments_counter || 0 %>, Likes : <%= @post.likes_counter || 0 %></span>
 
             <div class="">
                 <%= @post.text %>
             </div>
+        </div>
     </div>
 
-    <div class="comment-container">
+    <div class="Post_container">
+        <div class='Post'>
         <% if @post.comments.any? %>
             <% @post.comments.each do |comment| %>
-                <div class="comment-card">
-                    <div class='comment-name'> 
+                <div class="">
+                    <div class=''> 
                     <%= @user.name %> : <span><%= @post.text %></span>
                     </div>
                 </div>
@@ -21,5 +24,6 @@
         <% else %>
             <div>No comments</div>
         <% end %>
+        </div>
     </div>
 </section>

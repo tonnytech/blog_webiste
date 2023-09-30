@@ -9,6 +9,7 @@ html {
   padding-top: 5rem;
   margin-left: 10rem;
   margin-right: 10rem;
+  padding-bottom: 2rem;
   border: 2px solid black;
 }
 
@@ -38,8 +39,28 @@ html {
   justify-content: space-between;
   width: 60%;
   padding: 2rem;
+  position: relative;
 }
 
 .eachUser_image_and_introduction {
   display: flex;
+}
+
+.Post_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.Post {
+width: 70%;
+border: 2px solid black;
+padding: 1rem;
+position: relative;
+}
+
+.Post_absolute {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
