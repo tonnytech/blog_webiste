@@ -53,10 +53,10 @@ html {
 }
 
 .Post {
-width: 70%;
-border: 2px solid black;
-padding: 1rem;
-position: relative;
+  width: 70%;
+  border: 2px solid black;
+  padding: 1rem;
+  position: relative;
 }
 
 .Post_absolute {
