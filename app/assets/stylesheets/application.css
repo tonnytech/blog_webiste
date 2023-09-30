@@ -64,3 +64,11 @@ html {
   bottom: 0;
   right: 0;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  gap: 2rem;
+  align-items: center;
+}
