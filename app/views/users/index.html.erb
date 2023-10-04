@@ -1,1 +1,13 @@
-<h1>Index of the users</h1>
+<section class='user_section section'>
+<% @users.each do |user| %>
+<article class="user_section_article image_and_user_container">
+<div class='image_container'>
+<img src="<%= user.photo %>" class="" alt="">
+</div>
+    <div class="user_section_information">
+        <h2><%= link_to user.name, user_url(user) %></h2>
+        <p class='Post_absolute'>Number of posts: <%= user.posts_counter || 0 %></p>
+    </div>
+</article>
+<% end %>
+</section>
