@@ -26,12 +26,6 @@ RSpec.describe 'Posts', type: :request do
       get "/users/#{user.id}/posts"
       expect(response).to have_http_status(:success)
     end
-
-    it 'display the show template' do
-      post = user.posts.create(title: 'Test Post', text: 'Test Content')
-      get "/users/#{user.id}/posts/#{post.id}"
-      expect(response).to render_template('posts/index')
-    end
   end
 
   describe 'GET /users/:user_id/posts/:id' do
