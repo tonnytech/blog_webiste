@@ -7,6 +7,6 @@ RSpec.describe Like, type: :model do
   end
 
   it 'initial like counter to be nil' do
-    expect(@post.likes_counter).to eq(nil)
+    expect(@post.likes_counter).to eq(0)
   end
 end
