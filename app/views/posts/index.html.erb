@@ -8,7 +8,7 @@
             <p class='Post_absolute'>Number of posts: <%= @user.posts_counter %></p>
         </div>
     </article>
-    <% @posts.each do |post| %>
+    <% @user.posts.each do |post| %>
         <div class='Post_container'>
           <div class='Post'>
               <a class="" href="<%= user_post_path(user_id: post.author_id, id: post.id) %>">
