@@ -15,7 +15,7 @@
             <div>
                     <span class=""><%= post.title %></span>
                     <span class=""><%= post.text %></span>
-                    <span class="Post_absolute">Comments : <%= post.comments_counter || 0 %>, Likes : <%= post.likes_counter || 0 %></span>
+                    <span class="Post_absolute">Comments:<%= post.comments_counter || 0 %>, Likes : <%= post.likes_counter || 0 %></span>
             </div>
                 <% if post.recent_comments.present? %>
                     <div class="">
