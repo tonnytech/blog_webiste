@@ -9,8 +9,6 @@ RSpec.feature 'users/index.html.erb', type: :feature do
     @user3 = User.create(name: 'Ajema', photo: 'https://unsplash.com/photos/-xa9XSA7K9k', bio: 'coding',
                          posts_counter: 0)
     Post.create(author: @user, title: 'Night', text: 'Good night')
-    Post.create(author: @user2, title: 'Morning', text: 'Morning guys')
-    Post.create(author: @user2, title: 'Afternoon', text: 'Afternoon guys')
     visit root_path
   end
 
@@ -19,7 +17,6 @@ RSpec.feature 'users/index.html.erb', type: :feature do
     expect(page).to have_content(@user2.name)
     expect(page).to have_content(@user3.name)
   end
-
 
   it 'I can see the profile picture for each user' do
     expect(page).to have_css("img[src*='https://unsplash.com/photos/-xa9XSA7K9k']")
