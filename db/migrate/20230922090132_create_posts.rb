@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration creates the posts table in the database.
 class CreatePosts < ActiveRecord::Migration[7.0]
   def change

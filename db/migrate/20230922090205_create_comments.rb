@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration creates the comments table in the database.
 class CreateComments < ActiveRecord::Migration[7.0]
   def change

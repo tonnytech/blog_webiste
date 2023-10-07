@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This migration creates the users table in the database.
 class CreateUsers < ActiveRecord::Migration[7.0]
   def change
