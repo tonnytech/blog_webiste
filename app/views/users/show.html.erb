@@ -20,9 +20,9 @@
         <% @user.recent_posts.each do |post| %>
             <div class="Post_container">
                 <div class='Post'>
-                    <h2><%= link_to "Post # ", user_post_url(@user.id, post.id) %><%= post.id %></h2>
+                    <h2 class='user_post'><%= link_to "Post # ", user_post_url(@user.id, post.id) %><%= post.id %></h2>
                 <h3><%= post.text %></h3>
-                <div class='Post_absolute''>
+                <div class='Post_absolute'>
                     <span>Comments:<%= post.comments_counter || 0 %> </span> 
                     <span>Likes:<%= post.likes_counter || 0 %></span>
                 </div> 
@@ -30,7 +30,7 @@
             </div>
         <% end %>
         <div class='Post_container'>
-            <button type="button" class="all-posts-btn" id="all-posts-btn">See all posts</button>
+           <a href="<%= user_posts_path(@user) %>" class="all_posts" id="all_posts">See all posts</a>
         </div>
         <% else %>
             <div class='Post_container'>
