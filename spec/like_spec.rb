@@ -5,9 +5,8 @@ RSpec.describe Like, type: :model do
     @user = User.create(name: 'Tonny', photo: 'TonnyPhoto', bio: 'TonnyBio')
     @post = Post.create(title: 'postTitle', text: 'postText', author_id: @user.id)
   end
-  
-  it 'initial like counter to be 0' do
 
+  it 'initial like counter to be 0' do
     expect(@post.likes_counter).to eq(0)
   end
 end
